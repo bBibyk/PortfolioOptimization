@@ -56,7 +56,7 @@ model.addCons(pyscipopt.quicksum(part[i]*(df["asset_class"][i]=="Real Estate") f
 model.addCons(pyscipopt.quicksum(part[i]*(df["asset_class"][i]=="Commodities") for i in range(l)) == 5) #mod
 
 
-model.setObjective(pyscipopt.quicksum(part[i]*(r[i]+c[i]+d[i]-v[i]) for i in range(l)), "maximize")
+model.setObjective(pyscipopt.quicksum(part[i]*(10*r[i]+c[i]+d[i]-v[i]) for i in range(l)), "maximize")
 
 
 model.printStatistics()
